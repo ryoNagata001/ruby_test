@@ -17,17 +17,7 @@ def overlap_is(array)
             end
         end
     end
-    p array_temp
     #昇順のための関数
-    def min(array)
-        min = array[0]
-        array.each do |num|
-            if min > num
-                min = num
-            end
-        end
-        return min
-    end
 
     #tempの重複を解消
     if array_temp.empty?
@@ -37,7 +27,6 @@ def overlap_is(array)
             array_temp.delete(key)
             array_temp << key
         end
-        p array_temp
         #_tempを昇順に
         array_return = []
         while !(array_temp.empty?) do
@@ -47,5 +36,15 @@ def overlap_is(array)
         return array_return
     end
 end
+def min(array)
+    min = array[0]
+    array.each do |num|
+        if min > num
+            min = num
+        end
+    end
+    return min
+end
+
 
 p overlap_is([1,1,1,1,2,2])
