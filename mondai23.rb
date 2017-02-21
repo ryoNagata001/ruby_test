@@ -19,9 +19,12 @@ def overlap_number(array)
                 return_hash[key] += 1
             end
         end
+        if return_hash[key] == 1
+            return_hash.delete(key)
+        end
     end
     return return_hash
 end
 
-p overlap_number([1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,33])
+p overlap_number([1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,33,22,22])
 
